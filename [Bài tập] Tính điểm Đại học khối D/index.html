@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>Tính Điểm Đại Học Khối D</h1>
+        <form action="#">
+            <input type="text" id="number1">  Môn Toán
+            <br>
+            <br>
+            <input type="text" id="number2">  Môn Văn
+            <br>
+            <br>
+            <input type="text" id="number3">  Môn Anh
+            <br>
+            <br>
+            Khu Vực  <select id="place">
+                <option id="KV1">KV1</option>
+                <option id="KV2">KV2</option>
+                <option id="KV2-NT">KV2-NT</option>
+                <option id="KV3">KV3</option>
+            </select>
+            <br>
+            <br>
+            <button type="button" id="point" onclick="checkPoint()">Xem Điểm</button>
+        </form>
+        <script>
+            function checkPoint(){
+                let number1 = parseInt(document.getElementById('number1').value);
+                let number2 = parseInt(document.getElementById('number2').value);
+                let number3 = parseInt(document.getElementById('number3').value);
+                let sumPoint = parseInt(number1 + number2 + number3);
+                let place = document.getElementById('place').value;
+                switch (place){
+                    case 'KV1':
+                        alert(`Tổng điểm thi ĐH khối D của bạn là : ${sumPoint + 0.75}`)
+                        break;
+                    case 'KV2':
+                        alert(`Tổng điểm thi ĐH khối D của bạn là : ${sumPoint + 0.5}`)
+                        break;
+                    case 'KV2-NT':
+                        alert(`Tổng điểm thi ĐH khối D của bạn là : ${sumPoint + 0.25}`)
+                        break;
+                    default:
+                        alert(`Tổng điểm thi ĐH khối D của bạn là : ${sumPoint}`)
+                        break;
+                }
+            }
+        </script>
+</body>
+</html>
